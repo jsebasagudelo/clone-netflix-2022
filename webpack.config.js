@@ -1,16 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
+    //mode: "development",
     mode: "production",
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
     },
+  
     devtool: "source-map",
     devServer: {
         port: 4000,
         hot: true,
+       
         static: path.resolve(__dirname, "public"),
         proxy: {
 
@@ -19,7 +22,12 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.jsx']
-    },    
+    }, 
+    performance: {
+        hints: process.env.NODE_ENV === "production" ? "error" : false,
+        maxEntrypointSize: 580000,
+        maxAssetSize: 580000,
+      },   
     module:{
         rules:[
             {

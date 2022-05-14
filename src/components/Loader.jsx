@@ -1,9 +1,8 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
-
 import CircularProgress from '@material-ui/core/CircularProgress';
+import useStyleLoader from  '../styles/components/StyleLoader'
 const Loader = () => {
-  const classes = useStyles();
+  const classes = useStyleLoader();
   return (
     <div className={classes.loader}>
       <CircularProgress classes={{colorPrimary: classes.colorPrimary}} />
@@ -12,21 +11,6 @@ const Loader = () => {
   );
 };
 
-const useStyles = makeStyles((theme) => ({
-  loader: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  loader_text: {
-    fontsize: "21",
-    fontFamily: "'Source Sans Pro', sans-serif",
-    color: "#65fafb;",
-  },
-  colorPrimary:{
-    color: "#65fafb"
-  }
-}));
+
 
 export default Loader;

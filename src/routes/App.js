@@ -1,20 +1,15 @@
 import React from "react";
-import {HashRouter as  BrowserRouter, Route, Switch } from "react-router-dom";
-
+import {BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import Genero from "../pages/Genero";
 import NotFound from "../components/NotFound";
-import "../components/styles/App.css";
 import Search from "../pages/Search";
 import Mylist from "../components/Mylist";
-import { useSelector } from "react-redux";
 import useStylesApp from "../styles/components/StylesApp";
-
-
+import "../components/styles/App.css";
 function App() {
   const classes = useStylesApp();
-
 
 
 

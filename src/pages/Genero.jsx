@@ -3,12 +3,11 @@ import React, { useEffect, useState } from "react";
 import Select from "@material-ui/core/Select";
 import axios from "../Api";
 import requests from "../Api/Requests";
-
 import { genero_accion } from "../utils/constant";
 import Row from "../components/Row";
 import Layout from "../containers/Layout";
 import useStyleGenero from "../styles/components/StyleGenero";
-import Banner from "../components/Banner";
+import BannerBase from "../components/base/BannerBase";
 const Genero = () => {
   const classes = useStyleGenero();
   const [generlist, setGenerlist] = useState([]);
@@ -38,7 +37,7 @@ const Genero = () => {
     <>
       <Layout>
         <div className={classes.contenedor}>
-          <Banner/>
+          <BannerBase/>
           <div className={classes.genero}>
             <FormControl sx={{ m: 1, minWidth: 80 }}>
               <Select

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {AppBar,  Avatar,  IconButton,  Toolbar,  Button, } from "@material-ui/core";
-
 import { useHistory } from "react-router";
 import {useDispatch} from  'react-redux'
 import InputBase from "@material-ui/core/InputBase";

@@ -6,10 +6,6 @@ import Back from "./common/Back";
 const NotFound = () => {
   const classes = useStylesNotFound();
 
-
-
-
-
   return (
     <div className={classes.root}>
    

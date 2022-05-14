@@ -56,7 +56,7 @@ const useStyleRow= makeStyles((theme) => ({
         top: "8rem",
         left: "50%",
         transform: "translateX(-50%)",
-        width: "85rem",
+        width: "55rem",
         height: "auto",
         minHeight: "50rem",
         borderRadius: "1rem",

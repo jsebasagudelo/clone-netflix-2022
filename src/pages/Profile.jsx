@@ -1,6 +1,5 @@
 import { Typography, Box } from "@material-ui/core";
 import React from "react";
-
 import Plans from "../components/Plans";
 import { auth } from "../services/firebase/firebase";
 import netflixavatar from "../assets/images/netflixavatar.png";

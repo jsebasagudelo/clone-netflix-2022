@@ -9,9 +9,10 @@ import { useHistory } from "react-router-dom";
 
 const Layout = ({ children }) => {
   const { user } = useSelector((state) => ({ ...state }));
- //const userName = user.userInfo;
- console.log("usuario:"+userName)
+
+ //console.log("usuario:"+userName)
  const userName =user.userInfo;
+ //const userName="sebas"
   const history = useHistory();
 
   const styles = {
@@ -23,9 +24,9 @@ const Layout = ({ children }) => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
     if (userAuth) {
        console.log("onAuthStateChanged: " + userAuth.email);
-      } else {
-       history.push("/");
-     }
+     } else {
+     history.push("/");
+    }
     });
     return unsubscribe;
   }, []);

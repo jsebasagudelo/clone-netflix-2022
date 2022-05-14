@@ -3,7 +3,6 @@ import {Typography } from "@material-ui/core";
 import {truncate} from '../utils/Utilidades'
 import axios from  '../Api'
 import requests from "../Api/Requests";
-
 import useStyleBanner from "../styles/components/StyleBanner";
 const Banner = () => {
   const classes = useStyleBanner();
@@ -21,7 +20,7 @@ const Banner = () => {
 
    fetchDataAxios();
    return () => {
-    setMovie({}); // This worked for me
+    setMovie({}); 
    };
 
 

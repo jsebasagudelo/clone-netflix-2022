@@ -99,7 +99,7 @@ const useStyleMovieCard = makeStyles((theme) => ({
       top: "8rem",
       left: "50%",
       transform: "translateX(-50%)",
-      width: "85rem",
+      width: "55rem",
       height: "auto",
       minHeight: "50rem",
       borderRadius: "1rem",
@@ -119,13 +119,13 @@ const useStyleMovieCard = makeStyles((theme) => ({
       color:"#fff" 
     },
     info__overlay__videoBox: {
-      width: "100%",
-      height: "100%",
-      position: "relative",
+      width: "70%",
+        height: "70%",
+        position: "relative",
     },
     info__overlay__youtube: {
-      width: "100%",
-      height: "47.8rem",
+      width: "70%",
+      height: "25.8rem",
     },
     info__overlay__iconBox: {
       position: "absolute",
@@ -136,7 +136,7 @@ const useStyleMovieCard = makeStyles((theme) => ({
     },
     info__overlay__text: {
       padding: "2rem 4rem 4rem",
-      color: "#fff",
+        color: "#fff",
     },
     info__overlay__youtube_icon: {
       padding: "2rem 4rem 4rem",

@@ -1,12 +1,10 @@
 import React from "react";
-import {  string } from "prop-types";
-
+import { string} from "prop-types";
 import useStylesError from "../styles/components/StyleError";
 import { Grid, Typography } from "@material-ui/core";
 
 const Error = ({ title, message }) => {
   const classes = useStylesError();
-
 
   return (
     <div className={classes.root}>
@@ -40,7 +38,5 @@ Error.propTypes = {
   title: string.isRequired,
   message: string.isRequired,
 };
-
-
 
 export default Error;

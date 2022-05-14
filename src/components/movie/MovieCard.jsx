@@ -139,7 +139,7 @@ const MovieCard = ({ movie, poster = "" }) => {
                   videoId={trailerPath}
                   opts={opts}                
                 />
-                <div className={classes.info__overlay__iconBox}></div>
+                 <div className={classes.info__overlay__iconBox}></div>
               </div>
               <div className={classes.info__overlay__text}>
                 <h1>{title}</h1>

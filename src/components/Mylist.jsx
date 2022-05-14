@@ -1,23 +1,23 @@
 import React, { useState } from "react";
+import { Typography } from "@material-ui/core";
 import movieTrailer from "movie-trailer";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import HighlightOffRoundedIcon from "@material-ui/icons/HighlightOffRounded";
-import { base_url_Img as base_url } from "../utils/constant";
+import Layout from "../containers/Layout";
 import YouTube from "react-youtube";
-import "../components/styles/row.css";
 import { useSelector } from "react-redux";
 import useStyleMyList from "../styles/components/StyleMylist";
-import Layout from "../containers/Layout";
+import { base_url_Img as base_url } from "../utils/constant";
+import "../components/styles/row.css";
 const Mylist = () => {
   const classes = useStyleMyList();
   const [trailerPath, setTrailerPath] = useState("");
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [original_title, setOriginal_title] = useState("");
-  const {movie} =useSelector( (state) =>({...state}) )
+  const { movie } = useSelector((state) => ({ ...state }));
 
-  
   const handlePagination = (e) => {
     const el = e.target.parentElement.className.split(" ");
     const scrollContainer = document.querySelector(`.${el[1]}`);
@@ -45,8 +45,7 @@ const Mylist = () => {
           setTitle(movie?.name || movie?.title);
           setOriginal_title(movie?.original_name);
         })
-        .catch((error) => {
-          // handleError();
+        .catch((error) => {        
           console.log(error);
         });
     } else {
@@ -68,81 +67,88 @@ const Mylist = () => {
 
   return (
     <Layout>
-
-
-    <div className={classes.root}>
+      <div className={classes.root}>
         <div className={classes.espacio}></div>
-     
-      <div className="row">
-        <div className={`row__posters row__posters--${25}`}>
-          <span
-            className="pagination pagination--left"
-            onClick={(e) => handlePagination(e)}
-          >
-            <ChevronLeftIcon />
-          </span>
-          <span
-            className="pagination pagination--right"
-            onClick={(e) => handlePagination(e)}
-          >
-            <ChevronRightIcon />
-          </span>
-          { movie.listFavorites.map((movie) => {
-             
-            return (
-                 (movie.backdrop_path)&&
-                ( <img
-                  key={movie.id}
-                  className={classes.row__poster}
-                  src={base_url + movie.backdrop_path}
-                  alt={movie.name}
-                  onClick={() => handleClick(movie)}
-                />)
-             
-                );
+        <Typography
+          variant="h5"
+          style={{ marginBottom: "60px", color: "#fff", marginLeft: "30px" }}
+        >
+          My List
+        </Typography>
 
-          })}
-        </div>
-
-        {trailerPath && (
-          <div
-            className={classes.info__overlay}
-            onClick={() => handleClick(null)}
-          >
-            <div
-              className={classes.info__overlay__contentBox}
-              onClick={(e) => e.stopPropagation()}
+        <div className="row">
+          
+            <div className={`row__posters row__posters--${25}`}>
+            <span
+              className="pagination pagination--left"
+              onClick={(e) => handlePagination(e)}
             >
-              <span
-                onClick={() => handleClick(null)}
-                className={classes.info__overlay__btnClose}
+              <ChevronLeftIcon style={{ fill: '#fff' }} />
+            </span>
+            <span
+              className="pagination pagination--right"
+              onClick={(e) => handlePagination(e)}
+            >
+              <ChevronRightIcon  />
+            </span>
+            { movie.listFavorites.map((movie) => {
+               
+              return (
+                   (movie.backdrop_path)&&
+                  ( <img
+                    key={movie.id}
+                    className={classes.row__poster}
+                    src={base_url + movie.backdrop_path}
+                    alt={movie.name}
+                    onClick={() => handleClick(movie)}
+                    
+                  />)
+               
+                  );
+    
+            })}
+          </div>
+        
+          
+
+          {trailerPath && (
+            <div
+              className={classes.info__overlay}
+              onClick={() => handleClick(null)}
+            >
+              <div
+                className={classes.info__overlay__contentBox}
+                onClick={(e) => e.stopPropagation()}
               >
-                <HighlightOffRoundedIcon
-                  style={{ fill: "#fff", fontSize: 40 }}
-                />
-              </span>
-              <div className={classes.info__overlay_videoBox}>
-                <YouTube
-                  className={classes.info__overlay__youtube}
-                  videoId={trailerPath}
-                  opts={opts}
-                  title={"string"}
-                />
-                <div className={classes.info__overlay__iconBox}></div>
-              </div>
-              <div className={classes.info__overlay__text}>
-                <h1>{title}</h1>
-                <h2>{original_title ? `(${original_title})` : ""}</h2>
-                <p>{description}</p>
+                <span
+                  onClick={() => handleClick(null)}
+                  className={classes.info__overlay__btnClose}
+                >
+                  <HighlightOffRoundedIcon
+                    style={{ fill: "#fff", fontSize: 40 }}
+                  />
+                </span>
+                <div className={classes.info__overlay_videoBox}>
+                  <YouTube
+                    className={classes.info__overlay__youtube}
+                    videoId={trailerPath}
+                    opts={opts}
+                    title={"string"}
+                  />
+                  <div className={classes.info__overlay__iconBox}></div>
+                </div>
+                <div className={classes.info__overlay__text}>
+                  <h1>{title}</h1>
+                  <h2>{original_title ? `(${original_title})` : ""}</h2>
+                  <p>{description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
     </Layout>
   );
 };
-
 
 export default Mylist;
