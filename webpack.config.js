@@ -3,17 +3,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     //mode: "development",
     mode: "production",
+    optimization:{
+      minimize: false,
+   
+      splitChunks:{
+        chunks:"all",
+        name: false
+      }
+    },
     entry: './src/index.js',
     output: {
         path: path.join(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: "[name].js",
+        chunkFilename: "[name].chunk.js",
+       
     },
   
     devtool: "source-map",
     devServer: {
         port: 4000,
-        hot: true,
-       
+        hot: true,       
         static: path.resolve(__dirname, "public"),
         proxy: {
 

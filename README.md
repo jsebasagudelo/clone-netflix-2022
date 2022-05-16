@@ -1,5 +1,5 @@
 
-#  Netflix Clone Application ESCALAB
+#  Aplicación Clone de Netflix  Curso ESCALAB
 Esta es una aplicación de clonación de Netflix. Hice esta aplicación web para mejorar mis habilidades en React, Redux, Firebase y Material-UI para un proyecto final de un curso de Escalab https://escalab.academy/. Los usuarios pueden iniciar sesión y registrarse y ver datos de películas. Y los usuarios pueden agregar los datos a "Mi lista". Además, los usuarios pueden buscar películas  desde el cuadro de búsqueda.
 
 
@@ -12,7 +12,7 @@ Dependencias del Proyecto:
 - [axios](https://www.npmjs.com/package/axios) para la obtencion de datos
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)  para las rutas
 - [react-youtube](https://www.npmjs.com/package/react-youtube)  para ver videos de youtube
-- [prop-types] Verificación de tipos en accesorios de componentes
+- [prop-types](https://www.npmjs.com/package/prop-types) Verificación de tipos en accesorios de componentes
 - [material-ui] (https://v4.mui.com/) MUI proporciona una biblioteca simple, personalizable y accesible de componentes de React. Siga su propio sistema de diseño o comience con Material Design.
 
 - [styled-components]- los componentes con estilo le permiten escribir CSS real en su JavaScript
