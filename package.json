@@ -4,6 +4,8 @@
   "description": "Proyecto Practica Escalab",
   "main": "index.js",
   "scripts": {
+    "build":"webpack --mode production",
+    "start":"webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
     
   },

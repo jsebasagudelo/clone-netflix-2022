@@ -1,6 +1,7 @@
 import React from  'react'
 import { Grid } from "@material-ui/core";
 import MovieCard from "./MovieCard";
+import propTypes from "prop-types";
 const SearchedResults = ({ movies }) => {
    
   const styles={
@@ -28,6 +29,12 @@ const SearchedResults = ({ movies }) => {
       ))}
     </Grid>
   );
+};
+
+// Component Documentation
+SearchedResults.propTypes = {
+  movies: propTypes.array,
+
 };
 
 export default SearchedResults;

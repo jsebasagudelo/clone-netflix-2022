@@ -1,6 +1,7 @@
 import React from "react";
 import useStyleFooter from "../styles/components/StyleFooter";
-const Footer = () => {
+import propTypes from "prop-types";
+const Footer = ({autor}) => {
   const classes = useStyleFooter();
   return (
     <footer className={classes.footer}>
@@ -8,11 +9,17 @@ const Footer = () => {
         &copy; 2022 Made with ❤️ by {"  "}
         <a className={classes.link__container} href="https://github.com/jsebasagudelo/netflix-clone">
           {"   "}
-           Sebastian Agudelo
+          {autor}
         </a>
       </div>
     </footer>
   );
+};
+
+// Component Documentation
+Footer.propTypes = {
+  autor: propTypes.string,
+
 };
 
 export default Footer;

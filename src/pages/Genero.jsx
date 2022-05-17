@@ -13,7 +13,7 @@ const Genero = () => {
   const [generlist, setGenerlist] = useState([]);
   const [value, setValue] = useState(0);
   const [movie, setMovie] = useState({});
-  //const { getBanner } = useGetBanner();
+
   useEffect(() => {
     const fetchGenres = async () => {
       const request = await axios.get(requests.fetchGenders);

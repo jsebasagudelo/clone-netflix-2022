@@ -1,11 +1,12 @@
-import React from "react";
+import React, { Suspense, lazy }  from "react";
 import {BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "../pages/Home";
-import Profile from "../pages/Profile";
-import Genero from "../pages/Genero";
-import NotFound from "../components/NotFound";
-import Search from "../pages/Search";
-import Mylist from "../components/Mylist";
+
+const Profile = lazy(() => import("../pages/Profile"));
+const Genero = lazy(() => import("../pages/Genero"));
+const NotFound = lazy(() => import("../components/NotFound"));
+const Search = lazy(() => import("../pages/Search"));
+const Mylist = lazy(() => import("../components/Mylist"));
+const Home = lazy(() => import("../pages/Home"));
 import useStylesApp from "../styles/components/StylesApp";
 import "../components/styles/App.css";
 function App() {
@@ -16,6 +17,7 @@ function App() {
   return (
     <div className={classes.root}>
       <BrowserRouter  history={history}>
+      <Suspense fallback={<div>Loading...</div>}>
         <Switch>
           <Route path="/profile" exact>
             <Profile />
@@ -36,6 +38,7 @@ function App() {
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>
+        </Suspense>
       </BrowserRouter>
     </div>
   );
