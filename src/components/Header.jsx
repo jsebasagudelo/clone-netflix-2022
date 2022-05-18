@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {AppBar,  Avatar,  IconButton,  Toolbar,  Button, } from "@material-ui/core";
+import {AppBar,  Avatar,  IconButton,  Toolbar,  Button } from "@material-ui/core";
 import { useHistory } from "react-router";
 import {useDispatch} from  'react-redux'
 import InputBase from "@material-ui/core/InputBase";
@@ -70,12 +70,13 @@ const Header = () => {
           <IconButton onClick={handleHome}>
             <img src={logo} al="logo" className={classes.logo} />
           </IconButton>
-          <Button color="inherit" variant="text" onClick={handlePeliculas }  >
+          <Button color="inherit" variant="text" onClick={handlePeliculas }   className={classes.menu}  >
             Peliculas
           </Button>
-          <Button color="inherit" variant="text" onClick={ handleMyList}>
+          <Button color="inherit" variant="text" onClick={ handleMyList} className={classes.menu}>
             Mi Lista
           </Button>
+         
     
         </div>
 

@@ -38,12 +38,17 @@ const useStyleHeader = makeStyles((theme) => ({
       display: "flex",
       
       "& button":{
-        
+       
       },
       "& button:hover":{
         color: "#b3b3b3",
       
         
+      }
+    },
+    menu:{
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
       }
     },
     search: {
