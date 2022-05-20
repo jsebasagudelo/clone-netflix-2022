@@ -42,6 +42,7 @@ Por estados
 # Demo
 Live site(https://clone-netflix-js.vercel.app/)
 
+![site image] (https://i.ibb.co/YyQ4gWC/inicio.png)
 
 # Author
 
