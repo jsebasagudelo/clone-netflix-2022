@@ -4,7 +4,8 @@ const useStylesLogin= makeStyles((theme) => ({
     
     root: {
         position: "relative",
-        height: "100vh",       
+        height: "100vh",
+       
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -17,8 +18,7 @@ const useStylesLogin= makeStyles((theme) => ({
         position: "fixed",
         zIndex: 15,
         right: 20,
-        top:20,
-
+        top: 20,
       },
       image: {
         position: "fixed",
@@ -42,13 +42,8 @@ const useStylesLogin= makeStyles((theme) => ({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        
+        minWidth: "700px",
         marginTop: theme.spacing(4),
-        [theme.breakpoints.down("sm")]: {
-        flexDirection: "column",
-        margin: "0 15"
-        }
-
       },
   }))
 
