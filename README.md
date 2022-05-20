@@ -42,6 +42,12 @@ Por estados
 # Demo
 Live site(https://clone-netflix-js.vercel.app/)
 
+![alt text](https://i.ibb.co/YyQ4gWC/inicio.png)
+
+![alt text](https://i.ibb.co/YLHrd3Z/home.png)
+
+
+
 # Author
 
 Sebastian Agudelo
